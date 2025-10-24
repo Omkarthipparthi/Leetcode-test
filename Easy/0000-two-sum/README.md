@@ -53,7 +53,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comp
 
 **Memory:** N/A
 
-**Submitted:** 10/23/2025
+**Submitted:** 10/24/2025
 
 ## Link
 
