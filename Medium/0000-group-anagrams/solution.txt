@@ -1,8 +1,23 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        map = defaultdict(list)
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, ArrayList<String>> map = new HashMap<>();
 
-        for s in strs:
-            st = "".join(sorted(s))
-            map[st].append(s)
-        return list(map.values())
+        for(String str : strs){
+            char c[] = str.toCharArray();
+            Arrays.sort(c);
+            String sorted = new String(c);
+
+            if(map.containsKey(sorted)){
+                ArrayList<String> al = map.get(sorted);
+                al.add(str);
+            }else{
+                 ArrayList<String> al = new ArrayList<>();
+                 al.add(str);
+                 map.put(sorted, al);
+            }
+        }
+
+        return new ArrayList(map.values());
+        
+    }
+}
